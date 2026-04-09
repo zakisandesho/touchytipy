@@ -1,0 +1,153 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.app h1 {
+  font-size: 1.8rem;
+  color: var(--accent);
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+/* Stats bar */
+.stats {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.95rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.stat-value {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text);
+}
+
+/* Text display */
+.text-display {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  font-size: 1.4rem;
+  line-height: 2;
+  letter-spacing: 1px;
+  min-height: 120px;
+  cursor: text;
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+  user-select: none;
+}
+
+.text-display:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.char {
+  position: relative;
+}
+
+.char.correct {
+  color: var(--green);
+}
+
+.char.incorrect {
+  color: var(--red);
+  text-decoration: underline;
+}
+
+.char.current {
+  background: var(--cursor-bg);
+  border-bottom: 2px solid var(--accent);
+}
+
+.char.untyped {
+  color: var(--text);
+}
+
+/* Results */
+.results {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.results h2 {
+  font-size: 1.4rem;
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.results-stats {
+  display: flex;
+  gap: 3rem;
+}
+
+/* Buttons */
+.btn {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  padding: 0.6rem 1.6rem;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+/* Personal Best */
+.stat.pb .stat-value {
+  color: #f6e05e;
+}
+
+.stat.pb .stat-label {
+  color: #d69e2e;
+}
+
+.new-pb {
+  color: #f6e05e !important;
+  animation: pb-pulse 0.6s ease-in-out 3;
+}
+
+@keyframes pb-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.pb-reminder {
+  font-size: 0.85rem;
+  color: var(--text);
+}

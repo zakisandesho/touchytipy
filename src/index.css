@@ -1,0 +1,32 @@
+:root {
+  --bg: #1a1a2e;
+  --surface: #16213e;
+  --text: #4a5568;
+  --text-bright: #a8b2d1;
+  --green: #48bb78;
+  --red: #fc8181;
+  --accent: #63b3ed;
+  --cursor-bg: rgba(99, 179, 237, 0.25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background: var(--bg);
+  color: var(--text-bright);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  width: 100%;
+  max-width: 900px;
+  padding: 2rem;
+}
