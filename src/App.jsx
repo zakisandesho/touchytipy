@@ -69,7 +69,10 @@ function App() {
     return () => clearInterval(id)
   }, [startTime, finished])
 
-  const elapsed = startTime ? ((now || Date.now()) - startTime) / 1000 / 60 : 0
+  const elapsedMs = startTime ? (now || Date.now()) - startTime : 0
+  const elapsed = elapsedMs / 1000 / 60
+  const elapsedSec = Math.floor(elapsedMs / 1000)
+  const timerDisplay = `${Math.floor(elapsedSec / 60)}:${String(elapsedSec % 60).padStart(2, '0')}`
   const wordCount = typed.trim().split(/\s+/).filter(Boolean).length
   const wpm = elapsed > 0 ? Math.round(wordCount / elapsed) : 0
   const accuracy =
@@ -168,6 +171,10 @@ function App() {
           <span className="stat-label">Accuracy</span>
         </div>
         <div className="stat">
+          <span className="stat-value">{timerDisplay}</span>
+          <span className="stat-label">Time</span>
+        </div>
+        <div className="stat">
           <span className="stat-value">
             {typed.length}/{text.length}
           </span>
@@ -208,6 +215,10 @@ function App() {
             <div className="stat">
               <span className="stat-value">{errors}</span>
               <span className="stat-label">Errors</span>
+            </div>
+            <div className="stat">
+              <span className="stat-value">{timerDisplay}</span>
+              <span className="stat-label">Time</span>
             </div>
           </div>
           {pb && !isNewPB && (

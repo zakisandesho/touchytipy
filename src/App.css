@@ -76,6 +76,12 @@
 .char.current {
   background: var(--cursor-bg);
   border-bottom: 2px solid var(--accent);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { border-bottom-color: var(--accent); background: var(--cursor-bg); }
+  50% { border-bottom-color: transparent; background: transparent; }
 }
 
 .char.untyped {
