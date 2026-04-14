@@ -1,16 +1,54 @@
-# React + Vite
+# touchytipy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A typing speed test app built with React and Vite. Practice your typing with random sentences and track your WPM, accuracy, and personal best.
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- [Node.js](https://nodejs.org/) (v18 or later recommended)
+- npm (comes with Node.js)
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Clone the repository**
 
-## Expanding the ESLint configuration
+   ```bash
+   git clone <your-repo-url>
+   cd touchytipy
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+   Open the URL shown in your terminal (usually `http://localhost:5173`).
+
+## How to Play
+
+- A random sentence is displayed on screen. Type it as quickly and accurately as you can.
+- Characters turn **green** when typed correctly and **red** when wrong.
+- Your **WPM**, **accuracy**, **time**, and **error count** update in real time.
+- Press **Backspace** to correct mistakes.
+- Press **Tab** or **Esc** to reset and get a new sentence.
+- Your **personal best** WPM is saved automatically in your browser.
+
+## Available Scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the dev server with hot reload |
+| `npm run build` | Create a production build in `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint |
+
+## Tech Stack
+
+- React 19
+- Vite 8
